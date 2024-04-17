@@ -1,8 +1,8 @@
 
 
-const productContainer=document.querySelector(".productContainer");
+const productContainer=document.querySelector("#productContainer");
 
-const productTemplate=document.querySelector(".productTemplate")
+const productTemplate=document.querySelector("#productTemplate")
 
 
 export const showProductContainer=(products)=>{
@@ -10,13 +10,13 @@ if(!products){
     return false;
 }
 
- prducts.forEach((curProd)=>{
+ products.forEach((curProd)=>{
     const {brand, category,description, id, image, name,price,stock}=curProd;
  
-const productClone=document.importNode(productTemplate.textContent,true);
+const productClone=document.importNode(productTemplate.content,true);
 
 productClone.querySelector('.productName').textContent=name;
 
 productContainer.append(productClone);
-});
+}); 
 }
