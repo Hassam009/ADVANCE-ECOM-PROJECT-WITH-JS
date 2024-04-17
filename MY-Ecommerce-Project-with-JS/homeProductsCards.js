@@ -9,4 +9,8 @@ export const showProductContainer=(products)=>{
 if(!products){
     return false;
 }
+
+ prducts.forEach((curElem)=>{
+    const {id, name}=curElem;
+ });
 }
