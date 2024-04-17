@@ -15,5 +15,8 @@ if(!products){
  
 const productClone=document.importNode(productTemplate.textContent,true);
 
+productClone.querySelector('.productName').textContent=name;
+
+productContainer.append(productClone);
 });
 }
