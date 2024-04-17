@@ -10,7 +10,10 @@ if(!products){
     return false;
 }
 
- prducts.forEach((curElem)=>{
-    const {id, name}=curElem;
- });
+ prducts.forEach((curProd)=>{
+    const {brand, category,description, id, image, name,price,stock}=curProd;
+ 
+const productClone=document.importNode(productTemplate.textContent,true);
+
+});
 }
