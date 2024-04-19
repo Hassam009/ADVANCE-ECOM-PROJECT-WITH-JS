@@ -15,11 +15,14 @@ if(!products){
  
 const productClone=document.importNode(productTemplate.content,true);
 
+productClone.querySelector('.category').textContent=category;
 productClone.querySelector('.productName').textContent=name;
 productClone.querySelector('.productImage').src=image;
 productClone.querySelector('.productImage').src=name;
+productClone.querySelector('.productStock').textContent=stock;
+productClone.querySelector('.productDescription').textContent=description ;
 
 
 productContainer.append(productClone);
-}); 
+});  
 }
