@@ -1,3 +1,4 @@
+import { homeQuantityToggle } from "./homeQuantityToggle";
 
 
 const productContainer=document.querySelector("#productContainer");
@@ -23,6 +24,11 @@ productClone.querySelector('.productStock').textContent=stock;
 productClone.querySelector('.productDescription').textContent=description ;
 productClone.querySelector('.productPrice').textContent=`Rs${price}` ;
 productClone.querySelector('.productActualPrice').textContent=`Rs${price * 2}` ;
+
+productClone
+.querySelector(".stockElement").addEventListener("click", (Event)=>{
+homeQuantityToggle(Event,id,stock);
+}) 
 
 
 productContainer.append(productClone);
