@@ -21,9 +21,10 @@ productClone.querySelector('.productImage').src=image;
 productClone.querySelector('.productImage').alt =name;
 productClone.querySelector('.productStock').textContent=stock;
 productClone.querySelector('.productDescription').textContent=description ;
-productClone.querySelector('.productPrice').textContent=`Rs`+`${price}` ;
+productClone.querySelector('.productPrice').textContent=`Rs${price}` ;
+productClone.querySelector('.productActualPrice').textContent=`Rs${price * 2}` ;
 
 
 productContainer.append(productClone);
 });  
-}
+} 
