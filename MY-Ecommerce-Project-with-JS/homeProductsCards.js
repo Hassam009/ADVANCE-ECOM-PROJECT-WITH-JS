@@ -21,6 +21,7 @@ productClone.querySelector('.productImage').src=image;
 productClone.querySelector('.productImage').alt =name;
 productClone.querySelector('.productStock').textContent=stock;
 productClone.querySelector('.productDescription').textContent=description ;
+productClone.querySelector('.productPrice').textContent=`Rs`+`${price}` ;
 
 
 productContainer.append(productClone);
