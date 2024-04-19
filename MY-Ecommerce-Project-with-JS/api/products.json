@@ -7,7 +7,7 @@
       "price": 999.99,
       "stock": 50,
       "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display.",
-      "image": "../Images/tv.png"
+      "image": "..public/IMAGES/laptop.png"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "brand": "TechGadget",
       "price": 499.99,
       "stock": 100,
-      "image": "../images/iphone.png",
+      "image": "../images/tv.png",
       "description": "Feature-rich smartphone with a 6.2-inch screen, 12MP dual camera, 128GB storage, and a 4000mAh battery."
     },
     {
