@@ -1,41 +1,43 @@
 import { homeQuantityToggle } from "./homeQuantityToggle";
 
+const productContainer = document.querySelector("#productContainer");
 
-const productContainer=document.querySelector("#productContainer");
+const productTemplate = document.querySelector("#productTemplate");
 
-const productTemplate=document.querySelector("#productTemplate")
+export const showProductContainer = (products) => {
+  if (!products) {
+    return false;
+  }
 
+  products.forEach((curProd) => {
+    const { brand, category, description, id, image, name, price, stock } =
+      curProd;
 
-export const showProductContainer=(products)=>{
-if(!products){
-    return false; 
-}
+    const productClone = document.importNode(productTemplate.content, true);
 
- products.forEach((curProd)=>{
-    const {brand, category,description, id, image, name,price,stock}=curProd;
- 
-const productClone=document.importNode(productTemplate.content,true);
+    productClone.querySelector("#cardValue").setAttribute("id", `card${id}`);
 
+    productClone.querySelector(".category").textContent = category;
+    productClone.querySelector(".productName").textContent = name;
+    productClone.querySelector(".productImage").src = image;
+    productClone.querySelector(".productImage").alt = name;
+    productClone.querySelector(".productStock").textContent = stock;
+    productClone.querySelector(".productDescription").textContent = description;
+    productClone.querySelector(".productPrice").textContent = `Rs${price}`;
+    productClone.querySelector(".productActualPrice").textContent = `Rs${
+      price * 2
+    }`;
 
-productClone.querySelector('#cardValue').setAttribute('id',`card${id}`)
+    productClone
+      .querySelector(".stockElement")
+      .addEventListener("click", (Event) => {
+        homeQuantityToggle(Event, id, stock);
+      });
 
+      productClone.querySelector(".add-to-cart-button").addEventListener('click', (Event)=>{
+        addtoCart(Event,id,stock);
+      })
 
-
-productClone.querySelector('.category').textContent=category;
-productClone.querySelector('.productName').textContent=name;
-productClone.querySelector('.productImage').src=image;
-productClone.querySelector('.productImage').alt =name;
-productClone.querySelector('.productStock').textContent=stock;
-productClone.querySelector('.productDescription').textContent=description ;
-productClone.querySelector('.productPrice').textContent=`Rs${price}` ;
-productClone.querySelector('.productActualPrice').textContent=`Rs${price * 2}` ;
-
-productClone
-.querySelector(".stockElement").addEventListener("click", (Event)=>{
-homeQuantityToggle(Event,id,stock);
-}) 
-
-
-productContainer.append(productClone);
-});  
-} 
+    productContainer.append(productClone);
+  });
+};
