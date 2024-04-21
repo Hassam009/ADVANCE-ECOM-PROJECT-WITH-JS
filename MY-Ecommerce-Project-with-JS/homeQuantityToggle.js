@@ -3,7 +3,7 @@ export const homeQuantityToggle=(Event,id,stock)=>{
  const currentProductElement=document.querySelector(`#card${id}`)
 // console.log(currentProductElement)
 
-const productQuantity=currentProductElement.querySelector('.prdocutQuantity');
+const productQuantity=currentProductElement.querySelector('.productQuantity');
 
 let quantity=parseInt(productQuantity.getAttribute('data-quantity')) || 1;
 
@@ -19,9 +19,10 @@ if(Event.target.className==='cartDecrement'){
     if(quantity>1){
         quantity-=1;
     }
-}
+}  
 
 
 productQuantity.innerText=quantity;
-productQuantity.getAttribute("data-quantity", quantity);
+productQuantity.setAttribute("data-quantity", quantity.toString());
+return quantity;
 }   
