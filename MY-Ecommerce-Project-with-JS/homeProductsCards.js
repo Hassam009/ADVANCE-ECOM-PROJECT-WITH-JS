@@ -1,3 +1,4 @@
+import { addtoCart } from "./addtoCart";
 import { homeQuantityToggle } from "./homeQuantityToggle";
 
 const productContainer = document.querySelector("#productContainer");
