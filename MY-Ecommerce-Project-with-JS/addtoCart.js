@@ -9,5 +9,13 @@ let arrLocalStorageProduct=getCartProductFromLS();
     let quantity=currenProductElement.querySelector(".productQuantity").innerText;
     let price=currenProductElement.querySelector(".productPrice").innerText;
 
-console.log(quantity,price)
+//console.log(quantity,price)
+
+
+price=price.replace("Rs", "");
+price=price*quantity;
+
+arrLocalStorageProduct.push({id,quantity,price});
+localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct))
+ 
 }
