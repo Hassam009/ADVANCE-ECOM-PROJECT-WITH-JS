@@ -13,9 +13,10 @@ let arrLocalStorageProduct=getCartProductFromLS();
 
 
 price=price.replace("Rs", "");
-price=price*quantity;
+price=Number(price*quantity);
+quantity=Number(quantity);
 
 arrLocalStorageProduct.push({id,quantity,price});
 localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct))
  
-}
+} 
