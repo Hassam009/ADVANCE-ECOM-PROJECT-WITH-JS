@@ -1,6 +1,11 @@
-export const addtoCart=(Event,id,stock)=>{
-    const currenProductElement=document.querySelector(`#card${id}`);
+import { getCartProductFromLS } from "./getcartProducts";
 
+export const addtoCart=(Event,id,stock)=>{
+
+
+let arrLocalStorageProduct=getCartProductFromLS();
+     
+    const currenProductElement=document.querySelector(`#card${id}`);
     let quantity=currenProductElement.querySelector(".productQuantity").innerText;
     let price=currenProductElement.querySelector(".productPrice").innerText;
 
