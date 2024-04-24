@@ -19,4 +19,6 @@ quantity=Number(quantity);
 arrLocalStorageProduct.push({id,quantity,price});
 localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct))
  
+
+updateCartValue(arrLocalStorageProduct);
 } 
