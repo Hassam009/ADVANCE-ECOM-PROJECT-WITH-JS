@@ -9,7 +9,7 @@ if(!cartProducts){
 cartProducts=JSON.parse(cartProducts);
 
 
-updateCartValue(arrLocalStorageProduct)
+updateCartValue(cartProducts)
 return cartProducts;
 
 }
