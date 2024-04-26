@@ -1,5 +1,7 @@
 import { getCartProductFromLS } from "./getcartProducts";
 
+getCartProductFromLS();
+
 export const addtoCart=(Event,id,stock)=>{
 
 
@@ -22,3 +24,11 @@ localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct))
 
 updateCartValue(arrLocalStorageProduct);
 } 
+
+
+
+
+
+
+
+
